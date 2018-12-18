@@ -45,6 +45,9 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TerminalSession.cs" />
+    <Compile Include="TerminalSessionData.cs" />
+    <Compile Include="TerminalSessionInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
