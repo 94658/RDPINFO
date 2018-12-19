@@ -9,7 +9,7 @@ namespace RDPINFO
 {
     class TerminalSession
     {
-        [DllImport("wt  sapi32.dll")]
+        [DllImport("wtsapi32.dll")]
         static extern IntPtr WTSOpenServer([MarshalAs(UnmanagedType.LPStr)] String pServerName);
 
         [DllImport("wtsapi32.dll")]
