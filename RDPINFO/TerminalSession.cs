@@ -41,7 +41,7 @@ namespace RDPINFO
             public uint AddressFamily;
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 20)]
             public byte[] Address;
-        } public WTS_CLIENT_ADDRESS clientaddr;
+        } 
 
         [StructLayout(LayoutKind.Sequential)]
         public struct WTS_CLIENT_DISPLAY
