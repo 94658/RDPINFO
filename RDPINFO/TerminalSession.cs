@@ -26,6 +26,8 @@ namespace RDPINFO
         [DllImport("wtsapi32.dll")]
         static extern void WTSFreeMemory(IntPtr pMemory);
 
+
+        //Structure for Terminal Service Session Info
         [StructLayout(LayoutKind.Sequential)]
         private struct WTS_SESSION_INFO
         {
@@ -35,6 +37,7 @@ namespace RDPINFO
             public WTS_CONNECTSTATE_CLASS State;
         }
 
+        //Structure for Terminal Service Client IP Address
         [StructLayout(LayoutKind.Sequential)]
         public struct WTS_CLIENT_ADDRESS
         {
@@ -43,6 +46,7 @@ namespace RDPINFO
             public byte[] Address;
         } 
 
+        //Structure for Terminal Service lient Display
         [StructLayout(LayoutKind.Sequential)]
         public struct WTS_CLIENT_DISPLAY
         {
@@ -51,7 +55,8 @@ namespace RDPINFO
             public uint ColorDepth;
         }
 
-        public enum WTS_CONNECTSTATE_CLASS
+       
+        public enum WTS_CONNECTSTATE_CLASS:int
         {
             Active,
             Connected,
@@ -65,7 +70,7 @@ namespace RDPINFO
             Init
         }
 
-        public enum WTS_INFO_CLASS
+        public enum WTS_INFO_CLASS:int
         {
             InitialProgram = 0,
             ApplicationName = 1,
@@ -83,7 +88,17 @@ namespace RDPINFO
             ClientHardwareId = 13,
             ClientAddress = 14,
             ClientDisplay = 15,
-            ClientProtocolType = 16
+            ClientProtocolType = 16,
+            IdleTime = 17,
+            LogonTime = 18,
+            IncomingFrames = 19,
+            OutgoingFrames = 20,
+            ClientInfo = 21,
+            SessionInfo = 22,
+            ConfigInfo = 23,
+            ValidationInfo = 24,
+            SessionAddressV4 = 25,
+            IsRemoteSession = 26
         }
 
         private static IntPtr OpenServer(string Name)
